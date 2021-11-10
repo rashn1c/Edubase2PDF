@@ -1,14 +1,16 @@
 {
-  "name": "edubase-book-downloader",
+  "name": "Edubase2PDF",
   "version": "1.0.0",
-  "description": "ery very basic puppeteer code that authenticates the user and navigates through a book in order to generate and store pdfs. For all that want to use proper note apps (not the f* edubase reader app).",
+  "description": "download and merging of pdf pages from Edubase Reader",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "Andrin",
-  "license": "GNU GPL v3",
+  "author": "rashn1c",
+  "license": "GNU",
   "dependencies": {
-    "puppeteer": "^11.0.0"
+    "dotenv": "^10.0.0",
+    "pdf-lib": "^1.16.0",
+    "puppeteer": "^22.6.0"
   }
 }
