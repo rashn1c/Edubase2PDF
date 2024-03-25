@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const config = require('./config');
 const { PDFDocument } = require('pdf-lib');
 const { loginData, urlDescriptor, loginUrl, outputPdfTitle } = require('./config');
 
@@ -7,13 +8,13 @@ const login = async (browser) => {
     const page = await browser.newPage();
     console.log(new Date().toISOString(), " --- trying to log in");
     await page.goto(loginUrl);
-    await page.waitForTimeout(10000);  
+	await new Promise(resolve => setTimeout(resolve, 10000));
     await page.keyboard.type(loginData.email);
     await page.keyboard.press("Tab");
     await page.keyboard.type(loginData.password);
-    await page.waitForTimeout(1000);  
+	await new Promise(resolve => setTimeout(resolve, 1000));
     await page.keyboard.press("Enter");
-    await page.waitForTimeout(10000);  
+	await new Promise(resolve => setTimeout(resolve, 10000));
     console.log(new Date().toISOString(), " --- logged in");
 };
 
@@ -23,7 +24,7 @@ const generatePDF = async (browser, urlDescriptor) => {
     for (let index = urlDescriptor.startPage; index <= urlDescriptor.endPage; index++) {
         const pageUrl = urlDescriptor.base.replace('${page}', index.toString());
         await page.goto(pageUrl);
-        await page.waitForTimeout(3000);
+		await new Promise(resolve => setTimeout(resolve, 3000));
         console.log(new Date().toISOString(), ` --- opened page ${index}`);
 
         const pdfConfig = {
