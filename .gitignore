@@ -1,0 +1,26 @@
+# Dependencies
+/node_modules/
+
+# Environment variables
+.env
+
+# Builds
+/dist
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+
+# Package manager lock files
+# package-lock.json
+# yarn.lock
+
+# Custom configuration files
+config.js
