@@ -19,8 +19,8 @@ Thumbs.db
 .vscode/
 
 # Package manager lock files
-# package-lock.json
-# yarn.lock
+package-lock.json
+yarn.lock
 
 # Custom configuration files
 config.js
